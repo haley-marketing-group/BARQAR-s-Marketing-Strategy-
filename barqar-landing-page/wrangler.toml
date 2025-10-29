@@ -1,0 +1,11 @@
+# Cloudflare Pages configuration for BARQAR Landing Page
+name = "barqar-landing-page"
+compatibility_date = "2024-01-01"
+
+# Pages specific configuration
+[env.production]
+name = "barqar-landing-page"
+
+[env.preview]
+name = "barqar-landing-page-preview"
+

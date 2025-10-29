@@ -1,0 +1,45 @@
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00455B;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B7D436;
+}
+
+/* Selection colors */
+::selection {
+  background-color: #B7D436;
+  color: #00000A;
+}
+
+::-moz-selection {
+  background-color: #B7D436;
+  color: #00000A;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid #B7D436;
+  outline-offset: 2px;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.App {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}

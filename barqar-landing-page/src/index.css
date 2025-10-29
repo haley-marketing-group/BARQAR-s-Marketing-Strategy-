@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-barqar-blue: #00455B;
+  --color-barqar-green: #B7D436;
+  --color-barqar-black: #00000A;
+  --color-barqar-grey: #333333;
+  
+  --font-cabin: 'Cabin', sans-serif;
+  --font-weight-headline: 700;
+  --font-weight-body: 500;
+}
+
+body {
+  font-family: var(--font-cabin);
+  font-weight: var(--font-weight-body);
+  color: var(--color-barqar-black);
+  background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-headline);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
