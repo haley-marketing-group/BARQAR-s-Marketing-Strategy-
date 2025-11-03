@@ -9,12 +9,6 @@ import { motion } from 'framer-motion';
 const AuthoritySection = () => {
   const [showForm, setShowForm] = useState(false);
 
-  const stats = [
-    { number: '15+', label: 'Years of Marketing Expertise' },
-    { number: '500+', label: 'Successful Campaigns' },
-    { number: '95%', label: 'Client Satisfaction' },
-  ];
-
   return (
     <>
       <Section background="light" padding="large" id="authority">
@@ -42,30 +36,8 @@ const AuthoritySection = () => {
             </div>
           </FadeIn>
 
-          {/* Stats Section */}
           <FadeIn delay={0.3}>
-            <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center p-6 bg-white rounded-lg shadow-md">
-                  <div className="text-5xl font-headline text-barqar-green mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-barqar-black font-body font-semibold">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-
-          {/* Haley Marketing Brand Badge */}
-          <FadeIn delay={0.5}>
             <div className="text-center">
-              <div className="inline-block bg-barqar-blue text-white px-8 py-4 rounded-lg mb-8">
-                <p className="text-sm uppercase tracking-wider mb-1">Powered By</p>
-                <p className="text-2xl font-headline">Haley Marketing</p>
-              </div>
-              
               <div className="mb-8">
                 <Button 
                   variant="primary" 

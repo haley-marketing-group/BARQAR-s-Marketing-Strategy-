@@ -19,21 +19,30 @@ const ContactForm = ({ onClose }) => {
     setIsSubmitting(true);
     
     try {
-      // TODO: Integrate with Cloudflare Worker for form submission
-      // For now, simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Submit to Cloudflare Worker
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
       
-      console.log('Form data:', data);
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+      
       setIsSuccess(true);
       reset();
       
-      // Close modal after 3 seconds
+      // Close modal after 5 seconds
       setTimeout(() => {
         setIsSuccess(false);
         onClose?.();
-      }, 3000);
+      }, 5000);
     } catch (error) {
       console.error('Form submission error:', error);
+      alert('There was an error submitting the form. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -47,7 +56,7 @@ const ContactForm = ({ onClose }) => {
           Thank You!
         </h3>
         <p className="text-barqar-grey">
-          We've received your request and will be in touch soon.
+          The team at BARQAR will reach out to you shortly.
         </p>
       </div>
     );
@@ -120,34 +129,6 @@ const ContactForm = ({ onClose }) => {
           }
         })}
       />
-
-      <Textarea
-        label="Current Marketing Challenges"
-        name="challenges"
-        placeholder="Tell us about your marketing goals and challenges..."
-        rows={4}
-        error={errors.challenges?.message}
-        {...register('challenges')}
-      />
-
-      <div className="space-y-2">
-        <label htmlFor="referral" className="block text-sm font-body text-barqar-grey">
-          How did you hear about us?
-        </label>
-        <select
-          id="referral"
-          name="referral"
-          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-cabin font-body focus:outline-none focus:ring-2 focus:ring-barqar-green focus:border-barqar-green"
-          {...register('referral')}
-        >
-          <option value="">Select an option</option>
-          <option value="search">Search Engine</option>
-          <option value="social">Social Media</option>
-          <option value="referral">Referral</option>
-          <option value="email">Email</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
 
       <div className="flex items-start">
         <input

@@ -49,7 +49,7 @@ export async function onRequestPost(context) {
     
     // Prepare email content
     const emailContent = {
-      to: 'info@barqar.com', // Replace with actual email
+      to: 'jeff@barqar.com', // UPDATE THIS EMAIL ADDRESS
       from: 'noreply@barqar.com', // Replace with verified sender
       subject: `New Strategic Blueprint Request from ${formData.fullName}`,
       text: `
@@ -59,11 +59,6 @@ Name: ${formData.fullName}
 Email: ${formData.email}
 Company: ${formData.company}
 Phone: ${formData.phone || 'Not provided'}
-
-Marketing Challenges:
-${formData.challenges || 'Not provided'}
-
-Referral Source: ${formData.referral || 'Not provided'}
 
 Consent: ${formData.consent ? 'Yes' : 'No'}
 

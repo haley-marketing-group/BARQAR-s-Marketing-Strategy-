@@ -65,7 +65,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-5xl md:text-6xl lg:text-7xl font-headline text-white mb-6 leading-tight"
             >
-              Marketing Strategy That Helps Buyers Buy — and Salespeople Close
+              Marketing Strategy That Helps Buyers Buy and Salespeople Close
             </motion.h1>
 
             {/* Subheadline */}
