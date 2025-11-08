@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Hero from './components/sections/Hero';
 import PromoFlyIn from './components/sections/PromoFlyIn';
+import VideoSection from './components/sections/VideoSection';
 import ProblemSection from './components/sections/ProblemSection';
 import SolutionSection from './components/sections/SolutionSection';
 import BlueprintSection from './components/sections/BlueprintSection';
@@ -21,6 +22,7 @@ function App() {
     <div className="App">
       {/* Main Landing Page Sections */}
       <Hero />
+      <VideoSection />
       <ProblemSection />
       <SolutionSection />
       <BlueprintSection />
